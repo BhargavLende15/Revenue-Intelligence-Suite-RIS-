@@ -1,0 +1,9 @@
+sales_rep_id,sales_rep_name,region_id
+REP01,Alice Smith,REG01
+REP02,Bob Johnson,REG01
+REP03,Charlie Brown,REG02
+REP04,Diana Prince,REG02
+REP05,Ethan Hunt,REG03
+REP06,Fiona Gallagher,REG03
+REP07,George Clooney,REG04
+REP08,Hannah Abbott,REG04

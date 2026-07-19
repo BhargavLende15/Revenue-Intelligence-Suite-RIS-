@@ -1,0 +1,69 @@
+/* Custom Dashboard Styling & Micro-Animations */
+
+/* Card hover effect */
+.kpi-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+/* Custom Scrollbar for tables and panels */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Dark mode overrides for select elements if needed */
+.Select-control {
+    border-radius: 6px !important;
+}
+
+/* Print Overrides for Executive Report */
+@media print {
+    /* Hide non-printable items */
+    .d-print-none,
+    #sidebar,
+    #sidebar-container,
+    .theme-switch,
+    .btn {
+        display: none !important;
+    }
+
+    /* Expand main content area to full page */
+    #main-content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Remove card styles for paper print */
+    #printable-report-card {
+        box-shadow: none !important;
+        border: none !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 12pt;
+    }
+}

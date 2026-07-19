@@ -1,0 +1,16 @@
+product_id,product_name,category,base_price,cost_price
+PROD001,RIS Enterprise Core License,Software,5000.0,1000.0
+PROD002,RIS Cloud Connector Pro,Software,1200.0,300.0
+PROD003,RIS Analytics Plug-in,Software,800.0,150.0
+PROD004,RIS Team Sync License,Software,450.0,90.0
+PROD005,RIS Edge Processing Gateway,Hardware,1500.0,950.0
+PROD006,RIS Server Rack Appliance,Hardware,8500.0,5800.0
+PROD007,RIS IoT Smart Sensor,Hardware,120.0,65.0
+PROD008,RIS Backup Storage Unit,Hardware,2200.0,1400.0
+PROD009,Enterprise Architecture Audit,Consulting,3500.0,2000.0
+PROD010,Custom Integration Workshop,Consulting,2500.0,1500.0
+PROD011,Executive Strategy Session,Consulting,6000.0,3200.0
+PROD012,24/7 Platinum Phone Support,Support,1200.0,500.0
+PROD013,Gold Business-Hour Support,Support,600.0,250.0
+PROD014,Silver Email Support Plan,Support,300.0,120.0
+PROD015,Dedicated Support Account Rep,Support,4000.0,2200.0
