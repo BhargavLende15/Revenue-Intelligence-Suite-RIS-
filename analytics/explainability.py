@@ -92,7 +92,7 @@ class SHAPExplainerManager:
         # Sample for speed
         sample_x = self.background_data.sample(min(300, len(self.background_data)), random_state=42)
         # Use shap_values(sample_x) which returns a numpy array
-        shap_vals = self.explainer.shap_values(sample_x)
+        shap_vals = self.explainer.shap_values(sample_x, check_additivity=False)
         
         # Mean absolute SHAP values
         mean_abs_shap = np.abs(shap_vals).mean(axis=0)
@@ -128,7 +128,7 @@ class SHAPExplainerManager:
         
         # Compute shap values
         # For tree explainer on single row
-        shap_val = self.explainer.shap_values(x_input)[0]
+        shap_val = self.explainer.shap_values(x_input, check_additivity=False)[0]
         
         # Retrieve base value (expected value)
         expected_val = self.explainer.expected_value

@@ -119,7 +119,7 @@ app.layout = html.Div([
     dcc.Store(id="store-theme", data={"dark_mode": False}),
     
     # Sidebar
-    html.Div(id="sidebar-container"),
+    html.Div(get_sidebar(dark_mode=False), id="sidebar-container"),
     
     # Main Dashboard Page Content area
     html.Div([

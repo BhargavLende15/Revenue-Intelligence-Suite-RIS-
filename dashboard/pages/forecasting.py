@@ -114,12 +114,19 @@ def update_forecasting_page(selected_order_id, filters, theme_data):
         mode="lines+markers"
     ))
     
+    # Parse theme['success'] to RGBA for Plotly compatibility (no 8-char hex support)
+    success_hex = theme['success'].lstrip('#')
+    r = int(success_hex[0:2], 16)
+    g = int(success_hex[2:4], 16)
+    b = int(success_hex[4:6], 16)
+    fillcolor_rgba = f"rgba({r}, {g}, {b}, 0.1)"
+
     # Confidence Interval Bands
     fig_forecast.add_trace(go.Scatter(
         x=list(forecast["month"]) + list(forecast["month"])[::-1],
         y=list(forecast["upper_ci"]) + list(forecast["lower_ci"])[::-1],
         fill="toself",
-        fillcolor=f"{theme['success']}1A", # 10% opacity
+        fillcolor=fillcolor_rgba, # 10% opacity
         line=dict(color="rgba(255,255,255,0)"),
         hoverinfo="skip",
         name="95% Confidence Interval"

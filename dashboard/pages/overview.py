@@ -139,7 +139,10 @@ def update_overview(filters, theme_data):
     # For targets, filter by region and year if set
     filtered_targets = targets_df.copy()
     if filters and filters.get("region") != "All":
-        filtered_targets = filtered_targets[filtered_targets["region_id"] == filtered_df["region_id"].iloc[0] if len(filtered_df) > 0 else "N/A"]
+        if len(filtered_df) > 0:
+            filtered_targets = filtered_targets[filtered_targets["region_id"] == filtered_df["region_id"].iloc[0]]
+        else:
+            filtered_targets = filtered_targets[filtered_targets["region_id"] == "N/A"]
     if filters and filters.get("year") != "All":
         filtered_targets = filtered_targets[filtered_targets["target_month"].str.startswith(str(filters["year"]))]
         
