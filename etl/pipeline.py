@@ -252,6 +252,11 @@ def run_etl_pipeline():
     master_db.to_sql("master_analytical_dataset", conn, if_exists="replace", index=False)
     print(f" - Loaded integrated master table 'master_analytical_dataset' ({len(master_db)} rows)")
     
+    # Save cleaned processed master dataset file to data/processed/
+    os.makedirs("data/processed", exist_ok=True)
+    master_db.to_csv("data/processed/master_analytical_dataset.csv", index=False)
+    print(" - Saved integrated dataset to 'data/processed/master_analytical_dataset.csv'")
+    
     # Create simple views for SQL Analytics
     cursor = conn.cursor()
     cursor.execute("DROP VIEW IF EXISTS view_monthly_summary;")
